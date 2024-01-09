@@ -1,5 +1,6 @@
 function playSound(e) {
-    console.log(e.code)
+    // console.log(e.code)
+
     const audio = document.querySelector(`audio[data-key="${e.code}"]`)
     const drum = document.querySelector(`.drumDiv[data-key="${e.code}"]`)
 
@@ -18,3 +19,7 @@ function removeTransition(e) {
 const drums = document.querySelectorAll('.drumDiv')
 drums.forEach(drum => drum.addEventListener('transitionend', removeTransition))
 window.addEventListener('keydown', playSound);
+
+window.addEventListener('click', (e) => {
+    console.log(e)
+})
