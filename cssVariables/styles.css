@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+
+:root {
+  --base: hsl(0, 0%, 0%);
+  --blur: 10px;
+  --spacing: 10px;
+  --vsCodeColor: hsl(218, 19%, 11%);
+  --white: hsl(240, 60%, 99%);
+}
+
+body {
+  font-family: "Salsa", cursive;
+  color: var(--white);
+  font-size: 30px;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: var(--vsCodeColor);
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  border-radius: 10vh;
+  filter: blur(var(--blur));
+}
+
+input {
+}
+
+.hl {
+  color: var(--base);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.controls {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.helper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

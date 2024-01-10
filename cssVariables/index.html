@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="text-align: center; margin-bottom: 3rem">
+      Update css Variables with <span class="hl">JS</span>
+    </h2>
+    <main class="container">
+      <div class="controls">
+        <div class="helper">
+          <label>Spacing : </label>
+          <input
+            type="range"
+            name="spacing"
+            min="10"
+            max="200"
+            value="10"
+            data-sizing="px"
+          />
+        </div>
+        <div class="helper">
+          <label>Blur : </label>
+          <input
+            type="range"
+            name="blur"
+            min="0"
+            max="25"
+            value="10"
+            data-sizing="px"
+          />
+        </div>
+        <div class="helper">
+          <label>Base Color : </label>
+          <input type="color" name="base" value="#0000" />
+        </div>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1682686578615-39549501dd08?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
