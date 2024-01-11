@@ -28,14 +28,14 @@ function elders(inventors) {
     );
     return oldInventors
 };
-console.log(elders(INVENTORS))
+console.table(elders(INVENTORS))
 
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
 
 const names = (inventors) => {
-    const namesArray = inventors.map(inventor => inventor.first.concat(", " + inventor.last))
+    const namesArray = inventors.map(inventor => inventor.first.concat(" " + inventor.last))
     return namesArray
 }
 console.log(names(INVENTORS))
@@ -48,7 +48,7 @@ const sortingBirthdays = (inventors) => {
     const oldestToYoungest = inventors.sort((inventorA, inventorB) => inventorA.year - inventorB.year)
     return oldestToYoungest
 }
-console.log(sortingBirthdays(INVENTORS))
+console.table(sortingBirthdays(INVENTORS))
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
@@ -74,7 +74,19 @@ console.log(yearsLived(INVENTORS))
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+{
+    const category = document.querySelector('.mw-category')
+    console.log("category :", category)
 
+    const links = [...category.querySelectorAll('a')]
+    console.log("links : ", links)
+
+    const des = links.map(link => link.textContent)
+    console.log("des : ", des)
+
+    const filtering = des.filter(de => de.includes('de'))
+    console.log("filtering : ", filtering)
+}
 
 
 
@@ -125,16 +137,17 @@ const PEOPLE = [
     "Biondo, Frank",
 ];
 
-// const badr = 'badr ,eladr'
-// console.log(badr.split(',').slice(-1))
-
 // 7. sort Exercise
 // Sort the people alphabetically by last name
 
 const people = (manyPpl) => {
-    const peopleArr = manyPpl.sort()
-    // const newArr = peopleArr.split(',').slice(-1)
-    // return newArr
+    const peopleArr = manyPpl.sort((personA, personB) => {
+        const lastNameA = personA.split(', ').slice(-1)[0].trim(); // * or // personA.split(',').pop().trim()
+        const lastNameB = personB.split(', ').slice(-1)[0].trim(); // * or // personB.split(',').pop().trim()
+
+        return lastNameA.localeCompare(lastNameB)
+    })
+    return peopleArr
 }
 console.log(people(PEOPLE))
 
@@ -143,13 +156,7 @@ console.log(people(PEOPLE))
 
 
 
-
-
-
-
-// 8. Reduce Exercise
-// Sum up the instances of each of these
-const data = [
+const DATA = [
     "car",
     "car",
     "truck",
@@ -165,3 +172,18 @@ const data = [
     "car",
     "truck",
 ];
+
+// 8. Reduce Exercise
+// Sum up the instances of each of these
+
+const sumUp = (data) => {
+    const result = data.reduce((acc, curr) => {
+
+    }, 0)
+    return result
+}
+console.log(sumUp(DATA))
+
+
+// const arrw = ['da', 'dwq', 'dqsa']
+// const ind = indexOf(arrw[i])
