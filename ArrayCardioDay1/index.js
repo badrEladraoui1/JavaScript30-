@@ -177,9 +177,13 @@ const DATA = [
 // Sum up the instances of each of these
 
 const sumUp = (data) => {
-    const result = data.reduce((acc, curr) => {
-
-    }, 0)
+    const result = data.reduce((obj, currentItem) => {
+        // console.log('currentItem : ', currentItem)
+        if (!obj[currentItem]) obj[currentItem] = 0
+        obj[currentItem]++
+        return obj
+    }, {})
+    // console.log('**')
     return result
 }
 console.log(sumUp(DATA))
